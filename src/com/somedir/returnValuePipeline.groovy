@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+package com.somedir
+
 class RetValueClass {
 
     def getValue() {

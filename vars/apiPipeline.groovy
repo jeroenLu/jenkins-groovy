@@ -1,10 +1,11 @@
 #!/usr/bin/env groovy
-RetValueClass retValueClass = new RetValueClass()
+import com.somedir.RetValueClass
 
 def call(String name = 'human') {
     echo "start api pipeline"
 
-    echo retValueClass.getValue();
+    def valueClass = new RetValueClass();
+    echo valueClass.getValue();
 
 
 
