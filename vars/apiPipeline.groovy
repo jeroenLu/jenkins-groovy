@@ -3,7 +3,7 @@
 def call(String name = 'human') {
     echo "start api pipeline"
 
-    echo RetValueClass.getValue();
+    echo new RetValueClass().getValue();
 
 
 
