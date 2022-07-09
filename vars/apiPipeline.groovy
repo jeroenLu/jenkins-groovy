@@ -1,9 +1,10 @@
 #!/usr/bin/env groovy
+RetValueClass retValueClass = new RetValueClass()
 
 def call(String name = 'human') {
     echo "start api pipeline"
 
-    echo new RetValueClass().getValue();
+    echo retValueClass.getValue();
 
 
 
