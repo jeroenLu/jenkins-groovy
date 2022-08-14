@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 
-def call(Map callParams = [:]) {
+void call(Map callParams = [:]) {
     println("Printing arguments");
     for(String arguments : callParams) {
         println (arguments);
