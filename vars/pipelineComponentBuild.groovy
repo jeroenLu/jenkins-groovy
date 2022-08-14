@@ -5,7 +5,7 @@
  * @param params parameters specified in the pipeline
  * @return a list of stages to be executed
  */
-void call() {
+List<Closure> call() {
     echo "In pipelineComponentBuild"
 
     List<Closure> output = []
@@ -25,6 +25,7 @@ void call() {
         }
     })
 
+    return output
 }
 
 void mvnCompile() {
