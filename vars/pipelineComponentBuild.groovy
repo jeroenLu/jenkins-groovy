@@ -8,17 +8,23 @@
 void call() {
     echo "In pipelineComponentBuild"
 
-    stage('Compile') {
-        script {
-            mvnCompile()
-        }
-    }
+    List<Closure> output = []
 
-    stage('Test') {
-        script {
-            mvnTest()
+    output.add({
+        stage('Compile') {
+            script {
+                mvnCompile()
+            }
         }
-    }
+    })
+    output.add({
+        stage('Test') {
+            script {
+                mvnTest()
+            }
+        }
+    })
+
 }
 
 void mvnCompile() {
