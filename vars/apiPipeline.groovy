@@ -1,8 +1,9 @@
 #!/usr/bin/env groovy
 
 
-def call(String name = 'bla') {
+def call(Map callParams = [:]) {
     echo "In Call"
+
     def sequentialStages = []
 
     pipeline {
