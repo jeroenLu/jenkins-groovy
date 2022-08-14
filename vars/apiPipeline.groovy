@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 
-void call() {
+def call() {
     def sequentialStages = []
 
     pipeline {
