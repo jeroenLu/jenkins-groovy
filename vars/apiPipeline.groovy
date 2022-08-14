@@ -1,13 +1,37 @@
 #!/usr/bin/env groovy
-import com.somedir.RetValueClass
-
-def call(String name = 'human') {
-    echo "start api pipeline"
-
-    def valueClass = new RetValueClass();
-    echo valueClass.getValue();
 
 
+def call(Map callParams = [:]) {
+    println("Printing arguments");
+    for(String arguments : callParams) {
+        println (arguments);
+    }
+    println("End arguments");
 
-    echo "end api pipeline"
+    def sequentialStages = []
+
+    pipeline {
+        environment {
+//            BRANCH_NAME = getBranchName()
+//            APPLICATION_NAME = getRepoName()
+            //PROJECT_KEY = getBitbucketProjectKey()
+            //GITHUB_URL = System.getenv("BITBUCKET_URL")
+            // maven credentials used by the maven container to deploy to Artifactory
+            //MVN_CREDS = credentials('MVN_CREDS')
+        }
+
+        stages {
+            stage('Prepare pipeline') {
+                steps {
+                    script {
+                        echo "Adding stages to sequential build"
+
+                        sequentialStages.addAll(pipelineComponentBuild(callParams))
+
+                        sequentialStages.each { it.call() }
+                    }
+                }
+            }
+        }
+    }
 }
