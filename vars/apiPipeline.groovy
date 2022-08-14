@@ -19,10 +19,10 @@ def call(String name = 'bla') {
                 steps {
                     script {
                         echo "Adding stages to sequential build"
-//
-//                        sequentialStages.addAll(pipelineComponentBuild())
-//
-//                        sequentialStages.each { it.call() }
+
+                        sequentialStages.addAll(pipelineComponentBuild())
+
+                        sequentialStages.each { it.call() }
                     }
                 }
             }
