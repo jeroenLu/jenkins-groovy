@@ -31,5 +31,5 @@ void mvnUpdateVersion() {
 void commitVersion() {
     echo "Committing new pom.xml version"
     sh "git add pom.xml"
-    sh "git commit -m "jenkins pom update" -m "${BUILD_NUMBER}_${GIT_COMMIT}""
+    sh "git commit -m \"jenkins pom update\""
 }
