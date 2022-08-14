@@ -33,5 +33,5 @@ void commitVersion() {
 
     sh "git add pom.xml"
     sh "git commit -m \"jenkins pom update\""
-    sh "git push"
+    sh "git push origin master"
 }
