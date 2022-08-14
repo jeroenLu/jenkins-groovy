@@ -3,6 +3,7 @@
 
 def call(Map callParams) {
     echo "In Call"
+    echo "Updating API with parameters (callParameters=${callParams})"
 
     def sequentialStages = []
 
