@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 
-def call(Map callParams = [:]) {
+def call(Map callParams) {
     echo "In Call"
 
     def sequentialStages = []
