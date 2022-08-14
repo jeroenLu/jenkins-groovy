@@ -2,7 +2,7 @@
 
 
 def call(String name = 'bla') {
-    echo "In Call"
+    println "In Call"
     def sequentialStages = []
 
     pipeline {
@@ -11,7 +11,7 @@ def call(String name = 'bla') {
             stage('Prepare pipeline') {
                 steps {
                     script {
-                        echo "Adding stages to sequential build"
+                        println "Adding stages to sequential build"
 
 //                        sequentialStages.addAll(pipelineComponentBuild())
 //
