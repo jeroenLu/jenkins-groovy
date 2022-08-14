@@ -1,10 +1,3 @@
-/**
- * Returns a list of stages to be executed for building the project (when applicable)
- * @param isXldEnabled indicates whether an XLD configuration is present in the repository
- * @param callParams parameters specified in the Jenkinsfile
- * @param params parameters specified in the pipeline
- * @return a list of stages to be executed
- */
 List<Closure> call() {
     echo "In pipelineComponentBuild"
 

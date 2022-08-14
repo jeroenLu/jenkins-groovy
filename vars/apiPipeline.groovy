@@ -16,13 +16,32 @@ def call(Map callParams) {
             jdk 'openjdk-11'
         }
 
+        environment  {
+            DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+            VERSION = readMavenPom().getVersion()
+        }
+
         stages {
             stage('Prepare pipeline') {
                 steps {
                     script {
                         echo "Adding stages to sequential build"
 
+
+                        // TODO: githubFlowStart?
+
                         sequentialStages.addAll(pipelineComponentBuild())
+
+                        if(branchTypeUtils.isMasterbuild()){
+                            // TODO: updateVersion.
+                            sequentialStages.addAll(pipelineVersionUpdate())
+
+                            // TODO: pushToDockerHub
+                            // TODO: Update deployment-repo
+                        }
+
+
+                        // TODO: githubFlowFinish?
 
                         sequentialStages.each { it.call() }
                     }
