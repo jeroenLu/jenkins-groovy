@@ -30,6 +30,8 @@ void mvnUpdateVersion() {
 
 void commitVersion() {
     echo "Committing new pom.xml version"
+
     sh "git add pom.xml"
     sh "git commit -m \"jenkins pom update\""
+    sh "git push"
 }
