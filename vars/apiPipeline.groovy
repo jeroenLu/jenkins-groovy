@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 
-def call(String name = 'human') {
+def call(String name = 'bla') {
     echo "In Call"
     def sequentialStages = []
 
@@ -13,9 +13,9 @@ def call(String name = 'human') {
                     script {
                         echo "Adding stages to sequential build"
 
-                        sequentialStages.addAll(pipelineComponentBuild())
-
-                        sequentialStages.each { it.call() }
+//                        sequentialStages.addAll(pipelineComponentBuild())
+//
+//                        sequentialStages.each { it.call() }
                     }
                 }
             }

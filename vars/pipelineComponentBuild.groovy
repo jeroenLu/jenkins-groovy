@@ -23,11 +23,11 @@ void call() {
 
 void mvnCompile() {
     echo('Compile sources')
-    sh "mvn compile -B"
+    //sh "mvn compile -B"
     echo('Done compiling sources')
 }
 
 void mvnTest() {
     echo "Run unit tests"
-    sh "mvn test"
+    //sh "mvn test"
 }
