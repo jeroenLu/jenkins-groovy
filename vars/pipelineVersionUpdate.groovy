@@ -23,7 +23,7 @@ List<Closure> call() {
 
 void mvnUpdateVersion() {
     echo('Updating version')
-    sh "mvn build-helper:parse-version versions:set -DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}"
+    sh 'mvn build-helper:parse-version versions:set -DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}'
     echo('Done updating version')
 }
 
