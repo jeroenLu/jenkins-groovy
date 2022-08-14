@@ -32,7 +32,8 @@ def call(Map callParams) {
 
                         sequentialStages.addAll(pipelineComponentBuild())
 
-                        if(branchTypeUtils.isMasterbuild()){
+                        // TODO: Move to util
+                        if(true){
                             // TODO: updateVersion.
                             sequentialStages.addAll(pipelineVersionUpdate())
 
