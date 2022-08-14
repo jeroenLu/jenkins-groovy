@@ -5,7 +5,7 @@
  * @param params parameters specified in the pipeline
  * @return a list of stages to be executed
  */
-List<Closure> call(Map callParams) {
+void call(Map callParams) {
     echo "In pipelineComponentBuild"
 
     stage('Compile') {
