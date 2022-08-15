@@ -32,6 +32,6 @@ void commitVersion() {
     echo "Committing new pom.xml version"
 
     sh "git add pom.xml"
-    sh "git commit -m \"jenkins pom update\""
-    sh "git push origin master"
+    sh "git commit -am \"jenkins pom update\""
+    sh "git push --set-upstream origin master"
 }
