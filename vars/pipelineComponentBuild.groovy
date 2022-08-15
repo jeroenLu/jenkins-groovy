@@ -29,5 +29,5 @@ void mvnCompile() {
 
 void mvnTest() {
     echo "Run unit tests"
-    sh "mvn test -B"
+    //sh "mvn test -B"
 }
