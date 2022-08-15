@@ -33,7 +33,10 @@ void commitVersion() {
 
     sh "git add pom.xml"
     sh "git commit -am \"jenkins pom update\""
-    sshagent(credentials: ['GIT_SA_SSH']) {
-        sh "git push origin HEAD:master"
-    }
+    sh('git push https://jeroenLu:18371aeb567fac766575e4ccb5d1a338@github.com:jeroenLu/test-code-repo.git')
+
+//    sshagent(credentials: ['GIT_SA_SSH']) {
+//        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
+//        // "git push origin HEAD:master"
+//    }
 }
