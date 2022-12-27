@@ -39,7 +39,7 @@ void commitVersion() {
          sh 'git config user.name jeroenLu'
          sh 'git config user.email jeroenluers@gmail.com'
          sh 'git commit -m someSommit --allow-empty'
-         sh 'git push --set-upstream origin master'
+         sh 'git push -f --set-upstream origin master'
     }
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
