@@ -33,8 +33,15 @@ void commitVersion() {
 
     sh "git add pom.xml"
     sh "git commit -am \"jenkins pom update\""
-    sh('git push https://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@github.com/jeroenLu/pipeline-test-repo.git HEAD:master --force')
+ //   sh('git push https://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@github.com/jeroenLu/pipeline-test-repo.git HEAD:master --force')
 
+    withCredentials([gitUsernamePassword(credentialsId: 'my-credentials-id', gitToolName: 'git-tool')]) {
+         sh 'git config user.name jeroenLu'
+         sh 'git config user.email jeroenluers@gmail.com'
+         sh 'git commit -m someSommit --allow-empty'
+         sh 'git push --set-upstream origin master'
+    }
+    
 //    sshagent(credentials: ['GIT_SA_SSH']) {
 //        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
 //        // "git push origin HEAD:master"
