@@ -35,7 +35,7 @@ void commitVersion() {
     sh "git commit -am \"jenkins pom update\""
  //   sh('git push https://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@github.com/jeroenLu/pipeline-test-repo.git HEAD:master --force')
 
-    withCredentials([gitUsernamePassword(credentialsId: 'my-credentials-id', gitToolName: 'git-tool')]) {
+    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
          sh 'git config user.name jeroenLu'
          sh 'git config user.email jeroenluers@gmail.com'
          sh 'git commit -m someSommit --allow-empty'
