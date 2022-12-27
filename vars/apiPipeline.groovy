@@ -17,7 +17,6 @@ def call(Map callParams) {
         }
 
         environment  {
-            DOCKERHUB_CREDENTIALS=credentials('dockerhub')
             VERSION = readMavenPom().getVersion()
         }
 
