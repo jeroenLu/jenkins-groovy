@@ -41,7 +41,7 @@ void commitVersion() {
          sh 'git config user.email jeroenluers@gmail.com'
          sh "git add ."
          sh 'git commit -m pomUpdate --allow-empty'
-         sh 'git push'
+         sh 'git push HEAD:master'
     }
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
