@@ -36,6 +36,7 @@ void commitVersion() {
  //   sh('git push https://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@github.com/jeroenLu/pipeline-test-repo.git HEAD:master --force')
 
     withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
+         sh 'git pull'
          sh 'git config user.name jeroenLu'
          sh 'git config user.email jeroenluers@gmail.com'
          sh "git add pom.xml"
