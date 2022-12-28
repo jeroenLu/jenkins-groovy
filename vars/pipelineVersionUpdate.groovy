@@ -44,7 +44,7 @@ void commitVersion() {
          sh 'git status'
          sh 'git commit -m pomUpdate --allow-empty'
          sh 'git status'
-         sh 'git push origin master'
+         sh 'git push -f origin master'
     }
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
