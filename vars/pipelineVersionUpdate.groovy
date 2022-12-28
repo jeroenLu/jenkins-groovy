@@ -46,6 +46,6 @@ void commitVersion() {
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
 //        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
-//        // "git push origin HEAD:master"
+//        // "git push origin HEAD:origin master"
 //    }
 }
