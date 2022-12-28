@@ -39,9 +39,9 @@ void commitVersion() {
          sh 'git pull origin master'
          sh 'git config user.name jeroenLu'
          sh 'git config user.email jeroenluers@gmail.com'
-         sh "git add pom.xml"
+         sh "git add ."
          sh 'git commit -m pomUpdate --allow-empty'
-         sh 'git push -f --set-upstream origin master'
+         sh 'git push'
     }
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
