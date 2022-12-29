@@ -38,6 +38,9 @@ void mvnUpdateVersion() {
 
 void commitVersion() {
     echo "Committing new pom.xml version"
+    echo "${DEPLOY_REPO}"
+    echo "${DEPLOY_REPO_URL}"
+
 
 //    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
 //        sh '''
