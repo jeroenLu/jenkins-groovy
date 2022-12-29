@@ -53,6 +53,8 @@ void commitVersion() {
             git branch
             git status
             
+            git pull
+            
             git stash pop
             git status
             
@@ -62,7 +64,9 @@ void commitVersion() {
             git commit -am 'Bumped version number [ci skip]'
             git status
             
-            git push -f origin master
+            git branch
+            git status
+            git push origin master
            '''
     }
     
