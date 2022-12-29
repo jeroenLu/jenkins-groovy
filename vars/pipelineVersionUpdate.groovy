@@ -39,7 +39,10 @@ void commitVersion() {
         sh '''
             git config --global user.name jeroenLu
             git config --global user.email jeroenluers@gmail.com
+            git branch
+            git status
             
+            git checkout master
             git branch
             git status
             
