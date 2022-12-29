@@ -42,10 +42,15 @@ void commitVersion() {
             git branch
             git status
             
+            git stash
+            git status
+            
             git checkout master
             git branch
             git status
             
+            git stash pop
+            git status
             
             git add pom.xml
             git status
