@@ -44,6 +44,8 @@ void commitVersion() {
             git branch
             git status
             
+            git remote show origin
+            
             git stash
             git status
             
