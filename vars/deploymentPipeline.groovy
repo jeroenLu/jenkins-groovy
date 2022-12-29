@@ -24,24 +24,9 @@ def call(Map callParams) {
             stage('Prepare pipeline') {
                 steps {
                     script {
-                        echo "Adding stages to sequential build"
+                        echo "in deploy pipeline"
 
-
-                        // TODO: githubFlowStart?
-
-                        sequentialStages.addAll(pipelineComponentBuild())
-
-                        // TODO: Move to util
-                        if(true){
-                            // TODO: updateVersion.
-                            sequentialStages.addAll(pipelineVersionUpdate())
-
-                            // TODO: pushToDockerHub
-                            // TODO: Update deployment-repo
-                        }
-
-
-                        // TODO: githubFlowFinish?
+                        echo ${VERSION}
 
                         sequentialStages.each { it.call() }
                     }
