@@ -6,7 +6,7 @@ List<Closure> call() {
     output.add({
         stage('Update Version') {
             script {
-                mvnUpdateVersion()
+                //mvnUpdateVersion()
             }
         }
     })
@@ -31,26 +31,34 @@ void mvnUpdateVersion() {
 void commitVersion() {
     echo "Committing new pom.xml version"
 
-    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
-        sh '''
-            git config --global user.name jeroenLu
-            git config --global user.email jeroenluers@gmail.com
-            git branch
-            git status
-            
-            git checkout -B newBranch
-            
-            git branch
-            git status
-            
-            git add pom.xml
-            git status
-            
-            git commit -am 'Bumped version number [ci skip]'
-            git status
-            
-            git push origin newBranch:master
+    echo readMavenPom().getVersion()
 
-           '''
+    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
+
+        // get version
+
+        // get file
+
     }
+//        sh '''
+//            git config --global user.name jeroenLu
+//            git config --global user.email jeroenluers@gmail.com
+//            git branch
+//            git status
+//
+//            git checkout -B newBranch
+//
+//            git branch
+//            git status
+//
+//            git add pom.xml
+//            git status
+//
+//            git commit -am 'Bumped version number [ci skip]'
+//            git status
+//
+//            git push origin newBranch:master
+//
+//           '''
+//    }
 }

@@ -17,7 +17,6 @@ def call(Map callParams) {
         }
 
         environment  {
-            VERSION = readMavenPom().getVersion()
         }
 
         stages {
@@ -25,8 +24,6 @@ def call(Map callParams) {
                 steps {
                     script {
                         echo "in deploy pipeline"
-
-                        echo ${VERSION}
 
                         sequentialStages.each { it.call() }
                     }
