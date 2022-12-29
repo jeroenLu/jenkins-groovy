@@ -46,7 +46,7 @@ void commitVersion() {
             
             git remote show origin
             
-            git switch -c newBranch
+            git checkout -B newBranch
             
             git branch
             git status
