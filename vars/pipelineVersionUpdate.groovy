@@ -2,7 +2,7 @@ List<Closure> call() {
 
     environment  {
         DEPLOY_REPO = readMavenPom().getScm()
-        DEPLOY_REPO_URL = readMavenPom().getScm().getUrl
+        DEPLOY_REPO_URL = readMavenPom().getScm().getUrl()
     }
 
     echo "In pipelineComponentBuild"
