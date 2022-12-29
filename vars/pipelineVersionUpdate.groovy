@@ -30,6 +30,8 @@ void mvnUpdateVersion() {
 
 void commitVersion() {
     echo "Committing new pom.xml version"
+    echo "Current workspace is ${env.WORKSPACE}"
+
 
     
 //    sh "git commit -am \"jenkins pom update\""
