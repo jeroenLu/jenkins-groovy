@@ -41,21 +41,13 @@ void commitVersion() {
         sh '''
             git config --global user.name jeroenLu
             git config --global user.email jeroenluers@gmail.com
-            git branch
-            git status
             
             git remote show origin
             
-            git stash
-            git status
+            git branch newBranch
+            git checkout newBranch
             
-            git checkout origin/master
             git branch
-            git status
-            
-            git pull
-            
-            git stash pop
             git status
             
             git add pom.xml
@@ -64,9 +56,8 @@ void commitVersion() {
             git commit -am 'Bumped version number [ci skip]'
             git status
             
-            git branch
-            git status
-            git push origin master
+            git push --set-upstream origin newBranch
+
            '''
     }
     
