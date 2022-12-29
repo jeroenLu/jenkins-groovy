@@ -1,6 +1,6 @@
-List<Closure> call(def SCM) {
+List<Closure> call() {
     echo "In pipelineComponentBuild"
-    echo $env.{DEPLOY_REPO}
+    echo "\${DEPLOY_REPO}"
 
     List<Closure> output = []
 
