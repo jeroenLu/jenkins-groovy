@@ -53,7 +53,7 @@ void commitVersion() {
 //          sh 'git status'
 //          sh 'git commit -am pomUpdate'
 //          sh 'git status'
-//          sh 'git push origin master'
+//          sh 'git push -f origin master'
     
 //    sshagent(credentials: ['GIT_SA_SSH']) {
 //        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
