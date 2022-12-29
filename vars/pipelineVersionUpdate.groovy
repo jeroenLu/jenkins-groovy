@@ -41,11 +41,12 @@ void commitVersion() {
         sh '''
             git config --global user.name jeroenLu
             git config --global user.email jeroenluers@gmail.com
+            git branch
+            git status
             
             git remote show origin
             
-            git branch newBranch
-            git checkout newBranch
+            git switch -c newBranch
             
             git branch
             git status
@@ -61,7 +62,9 @@ void commitVersion() {
            '''
     }
     
-//       git push --set-upstream origin newBranch
+//
+//                   git branch newBranch
+//            git checkout newBranchgit push --set-upstream origin newBranch
 //       sh 'git pull origin master'
 //          sh 'git config user.name jeroenLu'
 //          sh 'git config user.email jeroenluers@gmail.com'
