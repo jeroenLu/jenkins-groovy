@@ -49,7 +49,7 @@ void commitVersion() {
             git stash
             git status
             
-            git checkout master
+            git checkout origin/master
             git branch
             git status
             
