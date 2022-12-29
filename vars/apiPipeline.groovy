@@ -35,7 +35,7 @@ def call(Map callParams) {
                         // TODO: Move to util
                         if(true){
                             // TODO: updateVersion.
-                            sequentialStages.addAll(pipelineVersionUpdate(DEPLOY_REPO))
+                            sequentialStages.addAll(pipelineVersionUpdate())
 
                             // TODO: pushToDockerHub
                             // TODO: Update deployment-repo

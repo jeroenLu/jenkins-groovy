@@ -1,6 +1,6 @@
 List<Closure> call(def SCM) {
     echo "In pipelineComponentBuild"
-    echo SCM.getUrl()
+    echo $env.{DEPLOY_REPO}
 
     List<Closure> output = []
 
