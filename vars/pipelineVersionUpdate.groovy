@@ -1,13 +1,13 @@
 List<Closure> call() {
 
     environment  {
-        DEPLOY_REPO = readMavenPom().getScm().getUrl()
+        DEPLOY_REPO = readMavenPom().getScm()
         DEPLOY_REPO_URL = readMavenPom().getScm().getUrl()
     }
 
     echo "In pipelineComponentBuild"
     echo "${DEPLOY_REPO}"
-    echo "${DEPLOY_REPO}"
+    echo "${DEPLOY_REPO_URL}"
 
     List<Closure> output = []
 
@@ -38,8 +38,6 @@ void mvnUpdateVersion() {
 
 void commitVersion() {
     echo "Committing new pom.xml version"
-    echo "${DEPLOY_REPO}"
-    echo "${DEPLOY_REPO_URL}"
 
 
 //    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
