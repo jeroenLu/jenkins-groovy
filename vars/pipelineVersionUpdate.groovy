@@ -41,7 +41,7 @@ void commitVersion() {
             git config --global user.email jeroenluers@gmail.com
             git add pom.xml
             git commit -am 'Bumped version number [ci skip]'
-            git push origin master
+            git push -f origin master
            '''
     }
     
