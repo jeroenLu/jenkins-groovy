@@ -1,8 +1,5 @@
 List<Closure> call() {
-
     echo "In pipelineComponentBuild"
-    echo "${DEPLOY_REPO}"
-    echo "${DEPLOY_REPO_URL}"
 
     List<Closure> output = []
 
@@ -33,35 +30,27 @@ void mvnUpdateVersion() {
 
 void commitVersion() {
     echo "Committing new pom.xml version"
-    echo "${DEPLOY_REPO_URL}"
-
 
     withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
-        sh  '''
-                git clone "${DEPLOY_REPO_URL}"
-            '''
-    }
+        sh '''
+            git config --global user.name jeroenLu
+            git config --global user.email jeroenluers@gmail.com
+            git branch
+            git status
+            
+            git checkout -B newBranch
+            
+            git branch
+            git status
+            
+            git add pom.xml
+            git status
+            
+            git commit -am 'Bumped version number [ci skip]'
+            git status
+            
+            git push origin newBranch:master
 
-//    withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
-//        sh '''
-//            git config --global user.name jeroenLu
-//            git config --global user.email jeroenluers@gmail.com
-//            git branch
-//            git status
-//
-//            git checkout -B newBranch
-//
-//            git branch
-//            git status
-//
-//            git add pom.xml
-//            git status
-//
-//            git commit -am 'Bumped version number [ci skip]'
-//            git status
-//
-//            git push origin newBranch:master
-//
-//           '''
-//    }
+           '''
+    }
 }
