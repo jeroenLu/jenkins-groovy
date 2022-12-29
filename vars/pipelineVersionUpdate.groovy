@@ -62,7 +62,7 @@ void commitVersion() {
             git commit -am 'Bumped version number [ci skip]'
             git status
             
-            git push origin master
+            git push -f origin master
            '''
     }
     
