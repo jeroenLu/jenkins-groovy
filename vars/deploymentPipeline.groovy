@@ -3,7 +3,7 @@
 
 def call(Map callParams) {
     echo "In Call"
-    echo "Updating API with parameters (callParameters=${callParams})"
+    echo "Updating deployment with parameters (callParameters=${callParams})"
 
     def sequentialStages = []
 
@@ -14,9 +14,6 @@ def call(Map callParams) {
             // Install the Maven version configured as "M3" and add it to the path.
             maven "M3"
             jdk 'jdk11'
-        }
-
-        environment  {
         }
 
         stages {
