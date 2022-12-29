@@ -1,13 +1,13 @@
 List<Closure> call() {
 
     environment  {
-        DEPLOY_REPO = readMavenPom().getScm()
+        DEPLOY_REPO = readMavenPom().getScm().getUrl()
         DEPLOY_REPO_URL = readMavenPom().getScm().getUrl()
     }
 
     echo "In pipelineComponentBuild"
     echo "${DEPLOY_REPO}"
-    echo "${DEPLOY_REPO_URL}"
+    echo "${DEPLOY_REPO}"
 
     List<Closure> output = []
 
