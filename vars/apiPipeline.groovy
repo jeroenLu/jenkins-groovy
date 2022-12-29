@@ -18,6 +18,7 @@ def call(Map callParams) {
 
         environment  {
             VERSION = readMavenPom().getVersion()
+            DEPLOY_REPO = readMavenPom().getScm()
         }
 
         stages {
@@ -34,7 +35,7 @@ def call(Map callParams) {
                         // TODO: Move to util
                         if(true){
                             // TODO: updateVersion.
-                            sequentialStages.addAll(pipelineVersionUpdate())
+                            sequentialStages.addAll(pipelineVersionUpdate(DEPLOY_REPO))
 
                             // TODO: pushToDockerHub
                             // TODO: Update deployment-repo
