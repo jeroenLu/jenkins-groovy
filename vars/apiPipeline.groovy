@@ -18,6 +18,7 @@ def call(Map callParams) {
 
         environment  {
             VERSION = readMavenPom().getVersion()
+
         }
 
         stages {
@@ -25,16 +26,16 @@ def call(Map callParams) {
                 steps {
                     script {
                         echo "Adding stages to sequential build"
-
+                        echo ${GIT_COMMIT}
 
                         // TODO: githubFlowStart?
 
-                        sequentialStages.addAll(pipelineComponentBuild())
+                        //sequentialStages.addAll(pipelineComponentBuild())
 
                         // TODO: Move to util
                         if(true){
                             // TODO: updateVersion.
-                            sequentialStages.addAll(pipelineVersionUpdate())
+                            //sequentialStages.addAll(pipelineVersionUpdate())
 
                             // TODO: pushToDockerHub
                             // TODO: Update deployment-repo
