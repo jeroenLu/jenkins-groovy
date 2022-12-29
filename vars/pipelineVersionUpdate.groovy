@@ -56,11 +56,12 @@ void commitVersion() {
             git commit -am 'Bumped version number [ci skip]'
             git status
             
-            git push --set-upstream origin newBranch
+            git push origin newBranch:master
 
            '''
     }
     
+//       git push --set-upstream origin newBranch
 //       sh 'git pull origin master'
 //          sh 'git config user.name jeroenLu'
 //          sh 'git config user.email jeroenluers@gmail.com'
