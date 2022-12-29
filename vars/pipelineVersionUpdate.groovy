@@ -1,6 +1,12 @@
 List<Closure> call() {
+
+    environment  {
+        DEPLOY_REPO = readMavenPom().getScm()
+    }
+
     echo "In pipelineComponentBuild"
     echo "${DEPLOY_REPO}"
+    echo ${DEPLOY_REPO}
 
     List<Closure> output = []
 
