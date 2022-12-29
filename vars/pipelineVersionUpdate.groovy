@@ -31,7 +31,17 @@ void mvnUpdateVersion() {
 void commitVersion() {
     echo "Committing new pom.xml version"
 
-    echo readMavenPom().getVersion()
+    final name =  "someName"
+    final version = readMavenPom().getVersion()
+    echo version
+
+    build(job: "/deployment-repo",
+            parameters: [
+                    string(name: 'APPLICATION_NAME', value: name),
+                    string(name: 'APPLICATION_VERSION', value: version),
+            ],
+            wait: false)
+
 
     withCredentials([gitUsernamePassword(credentialsId: 'jenkins-pat')]) {
 
