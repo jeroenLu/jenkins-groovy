@@ -6,7 +6,7 @@ List<Closure> call() {
     output.add({
         stage('Update Version') {
             script {
-                //mvnUpdateVersion()
+                mvnUpdateVersion()
             }
         }
     })
