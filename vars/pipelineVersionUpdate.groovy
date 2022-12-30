@@ -31,7 +31,7 @@ void commitVersion() {
     echo "Committing new pom.xml version"
 
     final projectName =  readMavenPom().getScm().getTag()
-    final applicationName =  readMavenPom().getName()
+    final applicationName =  readMavenPom().getArtifactId()
     final version = readMavenPom().getVersion()
     echo projectName
     echo applicationName
