@@ -18,8 +18,6 @@ def call(Map callParams) {
 
         environment  {
             VERSION = readMavenPom().getVersion()
-            PROJECT_NAME = readMavenPom().getScm().getTag()
-            APPLICATION_NAME = readMavenPom().getName()
         }
 
         stages {
