@@ -30,17 +30,17 @@ void mvnUpdateVersion() {
 void commitVersion() {
     echo "Committing new pom.xml version"
 
-    final projectName =  ${PROJECT_NAME}
-    final applicationName =  ${APPLICATION_NAME}
+    final dir =  ${PROJECT_NAME}
+    final subdir =  ${APPLICATION_NAME}
     final version = readMavenPom().getVersion()
-    echo projectName
-    echo applicationName
+    echo dir
+    echo subdir
     echo version
 
     build(job: "/deployment-repo",
             parameters: [
-                    string(name: 'PROJECT_NAME', value: projectName),
-                    string(name: 'APPLICATION_NAME', value: applicationName),
+                    string(name: 'PROJECT_NAME', value: dir),
+                    string(name: 'APPLICATION_NAME', value: subdir),
                     string(name: 'APPLICATION_VERSION', value: version),
             ],
             wait: false)
