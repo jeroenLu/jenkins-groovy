@@ -30,6 +30,8 @@ def call(Map callParams) {
 
                         sequentialStages.addAll(pipelineVersionUpdate())
 
+                        sequentialStages.addAll(pipelineDockerImageUpdate())
+
                         // TODO: pushToDockerHub
 
 
