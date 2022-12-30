@@ -23,7 +23,6 @@ List<Closure> call() {
 
 void mvnUpdateVersion() {
     echo('Updating version')
-    // sh "mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}"
     sh 'mvn build-helper:parse-version versions:set -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion}'
     echo('Done updating version')
 }
@@ -31,13 +30,17 @@ void mvnUpdateVersion() {
 void commitVersion() {
     echo "Committing new pom.xml version"
 
-    final name =  "someName"
+    final projectName =  ${PROJECT_NAME}
+    final applicationName =  ${APPLICATION_NAME}
     final version = readMavenPom().getVersion()
+    echo projectName
+    echo applicationName
     echo version
 
     build(job: "/deployment-repo",
             parameters: [
-                    string(name: 'APPLICATION_NAME', value: name),
+                    string(name: 'PROJECT_NAME', value: projectName),
+                    string(name: 'APPLICATION_NAME', value: applicationName),
                     string(name: 'APPLICATION_VERSION', value: version),
             ],
             wait: false)
@@ -49,7 +52,6 @@ void commitVersion() {
 
         // get file
 
-    }
 //        sh '''
 //            git config --global user.name jeroenLu
 //            git config --global user.email jeroenluers@gmail.com
@@ -64,11 +66,11 @@ void commitVersion() {
 //            git add pom.xml
 //            git status
 //
-//            git commit -am 'Bumped version number [ci skip]'
+//            git commit -am 'Update pom.xml [ci skip]'
 //            git status
 //
 //            git push origin newBranch:master
 //
 //           '''
-//    }
+    }
 }
